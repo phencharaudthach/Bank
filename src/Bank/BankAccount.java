@@ -3,7 +3,7 @@ package Bank;
 public class BankAccount {
     private String bankName;
     private String owner;
-    private int balance;
+    protected int balance;
     private String type;
 
 public BankAccount(String bankName, String owner, int balance, String type){
@@ -14,11 +14,13 @@ public BankAccount(String bankName, String owner, int balance, String type){
 }
 
 public void deposit(int amt){
-
+balance += amt;
 }
 
 public void withdrawal(int amt){
-
+if (balance >= amt){
+    balance -= amt;
+}
 }
 
 public String getBankInfo(){
