@@ -3,6 +3,11 @@ package com.codewithphencharaud;
 import Bank.BankAccount;
 import Bank.CreditAccount;
 import Bank.SavingsAccount;
+import Bank.DebitCard;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -16,5 +21,13 @@ public class Main {
         System.out.println(myCredit.getBankInfo());
         mySavings.applyInterest();
         System.out.println(mySavings.getBankInfo());
+        DebitCard myCard = new DebitCard(
+                "1234 1234 1234 1122",
+                "1234",
+                "223",
+                "Phen",
+                myCheck,
+                new ArrayList <SavingAccount>(Arrays.asList(myAcct, savings2))
+        );
     }
 }
