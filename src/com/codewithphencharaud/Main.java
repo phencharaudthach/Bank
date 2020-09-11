@@ -12,10 +12,11 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-//	BankAccount myAccount = new BankAccount("Citizen", "Phen", 500, "Checking");
+    BankAccount myAccount = new BankAccount("Citizen", "Phen", 500, "Checking");
 	CreditAccount myCredit = new CreditAccount("CitizenOne", "Phen", 100, 900, 25);
         SavingsAccount mySavings = new SavingsAccount("Discover", "Phen", 10000, 5 );
-	//        System.out.println(myAccount.getBankInfo());
+	    SavingsAccount savings2 = new SavingsAccount("Citizen", "Vee", 25000, 2);
+        //        System.out.println(myAccount.getBankInfo());
         myCredit.creditUsed(200);
         myCredit.payCredit();
         System.out.println(myCredit.getBankInfo());
@@ -26,8 +27,14 @@ public class Main {
                 "1234",
                 "223",
                 "Phen",
-                myCheck,
-                new ArrayList <SavingAccount>(Arrays.asList(myAcct, savings2))
+                myAccount,
+                new ArrayList <SavingsAccount>(Arrays.asList(mySavings, savings2))
         );
+
+        System.out.println(myAccount.getBankInfo());
+        System.out.println(myCard.charge(100, "4561") ? "Approved" : "Declined");
+        System.out.println(myAccount.getBankInfo());
+        System.out.println(myCard.charge(350, "7894") ? "Approved" : "Declined");
+        System.out.println(myAccount.getBankInfo());
     }
 }
